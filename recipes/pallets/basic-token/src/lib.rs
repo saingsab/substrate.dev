@@ -20,7 +20,8 @@ decl_storage! {
 	trait Store for Module<T: Trait> as Token {
 		pub Balances get(fn get_balance): map hasher(blake2_128_concat) T::AccountId => u64;
 
-		pub TotalSupply get(fn total_supply): u64 = 21000000;
+// SEL total supply is 2^(32) = 4294967296
+		pub TotalSupply get(fn total_supply): u64 = 4294967296; 
 
 		Init get(fn is_init): bool;
 	}
